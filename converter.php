@@ -11,6 +11,11 @@ $equivalences = array(
     "fi" => 12
 );
 
+$quantity = "";
+$from = "";
+$to = "";
+$result = "";
+
 if (isset($_POST["convert"]))
 {
     $quantity = $_POST["quantity"];
@@ -29,10 +34,4 @@ if (isset($_POST["convert"]))
     {
         $result = $quantity * (1 / $equivalence);
     }
-}
-else
-{
-    $quantity = "";
-    $from = "";
-    $to = "";
 }
