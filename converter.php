@@ -26,12 +26,12 @@ if (isset($_POST["convert"]))
     {
         $result = $quantity;
     }
-    elseif ($equivalence = $equivalences[$from.$to])
+    elseif (isset($equivalences[$from.$to]))
     {
-        $result = $quantity * $equivalence;
+        $result = $quantity * $equivalences[$from.$to];
     }
-    elseif ($equivalence = $equivalences[$to.$from])
+    elseif (isset($equivalences[$to.$from]))
     {
-        $result = $quantity * (1 / $equivalence);
+        $result = $quantity * (1 / $equivalences[$to.$from]);
     }
 }
