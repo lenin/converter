@@ -30,3 +30,9 @@ if (isset($_POST["convert"]))
         $result = $quantity * (1 / $equivalence);
     }
 }
+else
+{
+    $quantity = "";
+    $from = "";
+    $to = "";
+}
