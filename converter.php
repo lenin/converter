@@ -13,16 +13,20 @@ $equivalences = array(
 
 if (isset($_POST["convert"]))
 {
-    if ($_POST["from"] == $_POST["to"])
+    $quantity = $_POST["quantity"];
+    $from = $_POST["from"];
+    $to = $_POST["to"];
+
+    if ($from == $to)
     {
-        $result = $_POST["quantity"];
+        $result = $quantity;
     }
-    elseif ($equivalence = $equivalences[$_POST["from"].$_POST["to"]])
+    elseif ($equivalence = $equivalences[$from.$to])
     {
-        $result = $_POST["quantity"] * $equivalence;
+        $result = $quantity * $equivalence;
     }
-    elseif ($equivalence = $equivalences[$_POST["to"].$_POST["from"]])
+    elseif ($equivalence = $equivalences[$to.$from])
     {
-        $result = $_POST["quantity"] * (1 / $equivalence);
+        $result = $quantity * (1 / $equivalence);
     }
 }
